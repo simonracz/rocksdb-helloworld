@@ -17,6 +17,7 @@ int main(int argc, char* argv[]) {
 	assert(s.ok());
 	s = db->Get(rocksdb::ReadOptions(), key, &message);
 	assert(s.ok());
+	delete db;
 	std::cout << message;
 	return 0;
 }
